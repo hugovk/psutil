@@ -51,6 +51,7 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
+          allow-prereleases: true
 
       # setup-python always provides "python"; "python3" is missing on
       # Windows, and the Makefile defaults to it.
