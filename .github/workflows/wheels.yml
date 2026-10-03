@@ -93,6 +93,8 @@ jobs:
         env:
           CIBW_ARCHS: "${{ matrix.arch }}"
           CIBW_BUILD: "${{ matrix.build }}"
+          # 3.15 is still a release candidate.
+          CIBW_ENABLE: cpython-prerelease
           CIBW_CACHE_PATH: ${{ runner.temp }}/cibw-cache
           CIBW_BUILD_FRONTEND: "build[uv]"
           CIBW_TEST_COMMAND: 'python -W error::RuntimeWarning -c "import psutil; print(psutil.__version__)"'
